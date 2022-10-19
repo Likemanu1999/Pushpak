@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const ObjectId = mongoose.Schema.Types.ObjectId
 
 const voilationSchema = new mongoose.Schema({
-    lincensePlateNumber: {
+  vehicleId: {
         type: ObjectId,
         ref: 'vehicle',
         required: true

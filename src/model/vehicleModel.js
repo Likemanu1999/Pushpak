@@ -31,8 +31,8 @@ const vehiclechema = new mongoose.Schema({
       rc_status: {
         type: String,
         required: true,
-        enum: ["Active", "Inactive"],
-        trim: true
+        Boolean : ["Active", "Inactive"],
+        trim: true,
       },
       vehicleColor: {
         type: String,

@@ -11,12 +11,13 @@ router.get("/test-me", function (req, res) {
 //vehicle routes
 router.post('/register', vehicleController.createVehicle)
 // router.put('/users/:userId/cart', mid.mid1, cartController.updateCart)
-// router.get('/users/:userId/cart', mid.mid1, cartController.getCart)
-// router.delete('/users/:userId/cart', mid.mid1, cartController.deleteCart)
+router.get('/getvehicle/:vehicleId', vehicleController.getVehicle)
+router.delete('/deletevehile/:userId',vehicleController.Deleteuser)
 
+// voilation model
+router.post('/request',voilationController.createvoilation)
+router.get('/getrequest/:voilationId',voilationController.getvoilation)
+router.delete('/deletedata/:voilationId',voilationController.DeleteVoilation)
 
-routers.all("/*", function (req, res) {
-    res.status(404).send({ status: false, msg: "The api you requested is not available" });
-  });
 
 module.exports = router

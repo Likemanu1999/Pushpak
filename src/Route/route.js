@@ -9,7 +9,7 @@ const mid = require("../middlerware/middleware")
 router.post('/register',mid.middleware, vehicleController.createVehicle)
 router.get('/getregister',mid.middleware, vehicleController.getVehicle)
 router.put('/register/:vehicleId',mid.middleware, vehicleController.updatavehicle)
-router.delete('/deletevehile/:userId',mid.middleware, vehicleController.Deleteuser)
+router.delete('/deletevehile/:vehicleId',mid.middleware, vehicleController.Deleteuser)
 
 // voilation model
 router.post('/request',mid.middleware, voilationController.createvoilation)

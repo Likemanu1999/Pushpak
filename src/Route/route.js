@@ -3,21 +3,19 @@ const router = express.Router();
 
 const vehicleController= require('../Controllers/vehicleController')
 const voilationController = require('../Controllers/voilationController')
-
-router.get("/test-me", function (req, res) {
-  res.send("My first ever api!")
-})
+const mid = require("../middlerware/middleware")
 
 //vehicle routes
-router.post('/register', vehicleController.createVehicle)
-// router.put('/users/:userId/cart', mid.mid1, cartController.updateCart)
-router.get('/getvehicle/:vehicleId', vehicleController.getVehicle)
-router.delete('/deletevehile/:userId',vehicleController.Deleteuser)
+router.post('/register',mid.middleware, vehicleController.createVehicle)
+router.get('/getregister',mid.middleware, vehicleController.getVehicle)
+router.put('/register/:vehicleId',mid.middleware, vehicleController.updatavehicle)
+router.delete('/deletevehile/:userId',mid.middleware, vehicleController.Deleteuser)
 
 // voilation model
-router.post('/request',voilationController.createvoilation)
-router.get('/getrequest/:voilationId',voilationController.getvoilation)
-router.delete('/deletedata/:voilationId',voilationController.DeleteVoilation)
+router.post('/request',mid.middleware, voilationController.createvoilation)
+router.get('/getrequest',mid.middleware, voilationController.getvoilation)
+router.put('/updatarequest/:voilationId',mid.middleware, voilationController.updatavoilation)
+router.delete('/deletedata/:voilationId',mid.middleware, voilationController.DeleteVoilation)
 
 
 module.exports = router

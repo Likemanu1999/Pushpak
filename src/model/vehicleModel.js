@@ -42,6 +42,9 @@ const vehiclechema = new mongoose.Schema({
       registrationDate: {
         type: String,
         required: true,
+        // type: Date,
+        // default:Date.now(),
+        // required: true
       },
       insuranceUpto: {
         type: String,

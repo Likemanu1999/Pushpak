@@ -1,11 +1,10 @@
 const mongoose = require("mongoose");
-const ObjectId = mongoose.Schema.Types.ObjectId
 
 const voilationSchema = new mongoose.Schema({
-  vehicleId: {
-        type: ObjectId,
-        ref: 'vehicle',
-        required: true
+  lincensePlateNumber: {
+    type: String,
+    required: true,
+    trim: true,
     },
       voilationType: {
         type: String,
@@ -41,3 +40,10 @@ const voilationSchema = new mongoose.Schema({
 });
 
 module.exports = mongoose.model("voilation", voilationSchema);
+
+
+//const ObjectId = mongoose.Schema.Types.ObjectId
+
+// type: ObjectId,
+// ref: 'vehicle',
+// required: true
